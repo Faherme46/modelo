@@ -5,16 +5,16 @@ dataPath = './data' #Cambia a la ruta donde hayas almacenado Data
 imagePaths = os.listdir(dataPath)
 print('imagePaths=',imagePaths)
 
-face_recognizer = cv2.face.EigenFaceRecognizer_create()
+# face_recognizer = cv2.face.EigenFaceRecognizer_create()
 # face_recognizer = cv2.face.FisherFaceRecognizer_create()
 radius = 1
 neighbors = 120
-#face_recognizer = cv2.face.LBPHFaceRecognizer_create(radius, neighbors)
+face_recognizer = cv2.face.LBPHFaceRecognizer_create(radius, neighbors)
 
 # Leyendo el modelo
-face_recognizer.read('modeloEigenFace.xml')
+# face_recognizer.read('modeloEigenFace.xml')
 # face_recognizer.read('modeloFisherFace.xml')
-#face_recognizer.read('modeloLBPHFace.xml')
+face_recognizer.read('modeloLBPHFace.xml')
 
 cap = cv2.VideoCapture(0,cv2.CAP_DSHOW)
 #cap = cv2.VideoCapture('Video.mp4')
